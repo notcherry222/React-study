@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { DataView } from 'components/DataView';
 import { useState } from 'react';
+import { TextInput } from 'components/TextInput'
 
 const Container = styled.div`
   height: 100vh;
@@ -22,9 +23,12 @@ function App() {
     setToDoList(toDoList.filter((item) => item !== todo));
   };
 
+  const [toDo, setToDo] = useState('');
+
   return (
     <Container>
       <DataView toDoList={toDoList} onDelete={onDelete} />
+      <TextInput value={toDo} onChange={setToDo} />
     </Container>
   );
 }
