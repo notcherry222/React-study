@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import { Title } from 'components/Title';
-import { ToDoList } from 'components/ToDoList';
+import { DataView } from 'components/DataView';
 import { useState } from 'react';
 
 const Container = styled.div`
@@ -22,11 +21,10 @@ function App() {
   const onDelete = (todo: string) => {
     setToDoList(toDoList.filter((item) => item !== todo));
   };
-  
+
   return (
     <Container>
-      <Title label="할 일 목록" />
-      <ToDoList toDoList = {toDoList} onDelete={onDelete} />
+      <DataView toDoList={toDoList} onDelete={onDelete} />
     </Container>
   );
 }
